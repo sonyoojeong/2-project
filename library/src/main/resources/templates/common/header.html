@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+
+
+<body class="hero-anime">
+<div class="header" th:fragment="asdf">
+    <div class="navigation-wrap bg-light start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+
+                        <a class="navbar-brand" href="/"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+                            <lottie-player src="https://lottie.host/28927f1d-042c-4d16-8c09-12bc1fc18f4a/rqyRb7FbY4.json" background="transparent" speed="1" style="width: 165px; height: 165px;" loop autoplay></lottie-player></a>   <!--target="_blank" 속성 값 사용 가능-->
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"> <!-- active 속성 값 사용 가능 -->
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">자료 검색</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="/books/list">통합 자료 검색</a>
+                                        <a class="dropdown-item" href="/search">도서검색하기</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="/map">찾아오시는길</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="#">Agency</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MyPage</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="/members/update">회원 수정</a>
+                                        <a class="dropdown-item" href="/members/mypage">마이페이지</a>
+                                        <a class="dropdown-item" href="/like">관심 목록</a>
+                                        <a class="dropdown-item" href="/rents">대여 목록</a>
+
+                                    </div>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AdminPage</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="/admin/books/new">신규 도서 등록</a>
+                                        <a class="dropdown-item" href="/admin/books">도서 목록</a>
+                                        <a class="dropdown-item" href="/members/member/">회원 목록</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" sec:authorize="isAnonymous()">
+                                    <a class="nav-link" href="/members/login">Login</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" sec:authorize="isAuthenticated()">
+                                    <a class="nav-link" href="/members/logout">Logout</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" sec:authorize="isAnonymous()">
+                                    <a class="nav-link" href="/members/sign_up">회원가입</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-5 py-5">
+    </div>
+</div>
+</body>
+</html>
